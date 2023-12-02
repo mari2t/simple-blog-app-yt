@@ -1,3 +1,16 @@
+# Overview
+
+初心者OK！T3 Stackでブログを作りながら型安全にアプリ開発を学ぶT3 Stack入門  
+【Next.js/tRPC/TailwindCSS/Typescript/Prisma】  
+https://www.youtube.com/watch?v=g6K3SKSYuoM  
+を参考にさせていただき作成しました。
+
+# Objective
+
+1. TypeScriptの理解。
+2. Prismaの理解。
+3. tRPCに触れてみる。
+
 # Create T3 App
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
