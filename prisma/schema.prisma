@@ -18,3 +18,10 @@ datasource db {
 
 //     @@index([name])
 // }
+
+model Post {
+    id          Int      @id @default(autoincrement())
+    title       String
+    descriprion String?
+    createdeAt  DateTime @default(now())
+}

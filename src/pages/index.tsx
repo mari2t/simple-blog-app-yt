@@ -5,6 +5,7 @@ import { api } from "~/utils/api";
 
 export default function Home() {
   const hello = api.post.hello.useQuery({ text: "from tRPC" });
+  console.log(hello.data);
 
   return (
     <>
@@ -20,7 +21,21 @@ export default function Home() {
           </h1>
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <Link href="https://create.t3.gg/en/usage/first-steps">
-              <div className="rounded-xl bg-white p-6">
+              <div className="rounded-xl bg-white/10 p-6">
+                <h3 className="mb-4 text-2xl font-bold">Blog Title</h3>
+                <div className="mb-4">Blog Description</div>
+                <span className="text-base text-gray-400">2023/12/03</span>
+              </div>
+            </Link>
+            <Link href="https://create.t3.gg/en/usage/first-steps">
+              <div className="rounded-xl bg-white/10 p-6">
+                <h3 className="mb-4 text-2xl font-bold">Blog Title</h3>
+                <div className="mb-4">Blog Description</div>
+                <span className="text-base text-gray-400">2023/12/03</span>
+              </div>
+            </Link>
+            <Link href="https://create.t3.gg/en/usage/first-steps">
+              <div className="rounded-xl bg-white/10 p-6">
                 <h3 className="mb-4 text-2xl font-bold">Blog Title</h3>
                 <div className="mb-4">Blog Description</div>
                 <span className="text-base text-gray-400">2023/12/03</span>
