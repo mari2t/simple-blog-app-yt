@@ -6,6 +6,8 @@ import { api } from "~/utils/api";
 export default function Home() {
   // const hello = api.post.hello.useQuery({ text: "from tRPC" });
   // console.log(hello.data);
+  const allBlogs = api.post.getAllBlogs.useQuery();
+  console.log(allBlogs.data);
 
   return (
     <>
