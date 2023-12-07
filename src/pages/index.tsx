@@ -7,7 +7,7 @@ export default function Home() {
   // const hello = api.post.hello.useQuery({ text: "from tRPC" });
   // console.log(hello.data);
   const allBlogs = api.post.getAllBlogs.useQuery();
-  console.log(allBlogs.data);
+  // console.log(allBlogs.data);
 
   return (
     <>
@@ -22,26 +22,24 @@ export default function Home() {
             <span className="text-[hsl(280,100%,70%)]">T3</span> App Blog
           </h1>
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <Link href="https://create.t3.gg/en/usage/first-steps">
-              <div className="rounded-xl bg-white/10 p-6">
-                <h3 className="mb-4 text-2xl font-bold">Blog Title</h3>
-                <div className="mb-4">Blog Description</div>
-                <span className="text-base text-gray-400">2023/12/03</span>
-              </div>
-            </Link>
-            <Link href="https://create.t3.gg/en/usage/first-steps">
-              <div className="rounded-xl bg-white/10 p-6">
-                <h3 className="mb-4 text-2xl font-bold">Blog Title</h3>
-                <div className="mb-4">Blog Description</div>
-                <span className="text-base text-gray-400">2023/12/03</span>
-              </div>
-            </Link>
-            <Link href="https://create.t3.gg/en/usage/first-steps">
-              <div className="rounded-xl bg-white/10 p-6">
-                <h3 className="mb-4 text-2xl font-bold">Blog Title</h3>
-                <div className="mb-4">Blog Description</div>
-                <span className="text-base text-gray-400">2023/12/03</span>
-              </div>
+            {allBlogs.data?.map((blog) => (
+              <Link href={`/blog/${blog.id}`} key={blog.id}>
+                <div className="rounded-xl bg-white/10 p-6">
+                  <h3 className="mb-4 text-2xl font-bold">{blog.title}</h3>
+                  <div className="mb-4">{blog.descriprion}</div>
+                  <span className="text-base text-gray-400">
+                    {blog.createdeAt.toLocaleDateString()}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link
+              href="/postBlog"
+              className="rounded-md bg-orange-500 px-6 py-4 font-medium"
+            >
+              投稿する
             </Link>
           </div>
         </div>
