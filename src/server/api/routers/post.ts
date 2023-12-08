@@ -34,4 +34,13 @@ export const postRouter = createTRPCRouter({
   getAllBlogs: publicProcedure.query(() => {
     return db.post.findMany();
   }),
+
+  postBlog: publicProcedure
+    .input(z.object({ title: z.string(), descriprion: z.string() }))
+    .mutation((req) => {
+      const postBlog = db.post.create({
+        data: { title: req.input.title, descriprion: req.input.descriprion },
+      });
+      return postBlog;
+    }),
 });
