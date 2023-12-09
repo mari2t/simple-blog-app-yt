@@ -1,12 +1,27 @@
 import React, { useRef } from "react";
 import Link from "next/link";
+import { api } from "~/utils/api";
+import { useRouter } from "next/navigation";
 
 const PostBlog = () => {
   const titleRef = useRef<HTMLInputElement>(null);
-  const description = useRef<HTMLTextAreaElement>(null);
+  const descriptionRef = useRef<HTMLTextAreaElement>(null);
+
+  const route = useRouter();
+
+  const postBlog = api.post.postBlog.useMutation();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault;
+
+    // ifに入れないとエラーが出るため
+    if (titleRef.current && descriptionRef.current) {
+      postBlog.mutate({
+        title: titleRef.current.value,
+        descriprion: descriptionRef.current.value,
+      });
+    }
+    route.push("/");
   };
 
   return (
@@ -46,7 +61,7 @@ const PostBlog = () => {
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
               id="description"
               placeholder="説明を入力"
-              ref={description}
+              ref={descriptionRef}
             />
           </div>
           <div className="flex items-center justify-between">
