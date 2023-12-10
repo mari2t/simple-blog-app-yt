@@ -1,6 +1,8 @@
 import React from "react";
+import { api } from "~/utils/api";
 
 const DetailPage = () => {
+  const detailBlog = api.post.getAllBlogs.useQuery;
   const handleDelete = () => {};
 
   return (

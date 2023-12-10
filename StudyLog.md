@@ -2,6 +2,10 @@
 
 学習メモとして作成
 
+### 2023/12/10
+
+1. api getDetailBlog 作成
+
 ### 2023/12/09
 
 1. 〇description ×descriprion　Prismaを作ってしまったのでいったんこれで進める。
