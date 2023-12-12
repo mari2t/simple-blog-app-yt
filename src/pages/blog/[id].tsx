@@ -1,8 +1,12 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { api } from "~/utils/api";
 
 const DetailPage = () => {
-  const detailBlog = api.post.getAllBlogs.useQuery;
+  const router = useRouter();
+  const { id } = router.query;
+  const parseNumberId = Number(id);
+  const detailBlog = api.post.getDetailBlog.useQuery({ id: parseNumberId });
   const handleDelete = () => {};
 
   return (
