@@ -2,8 +2,9 @@
 
 初心者OK！T3 Stackでブログを作りながら型安全にアプリ開発を学ぶT3 Stack入門  
 【Next.js/tRPC/TailwindCSS/Typescript/Prisma】  
-https://www.youtube.com/watch?v=g6K3SKSYuoM  
-を参考にさせていただき作成しました。
+youtube.com/watch?v=g6K3SKSYuoM  
+を参考にさせていただき作成しました。  
+[学習ログ](./StudyLog.md)
 
 # Objective
 
